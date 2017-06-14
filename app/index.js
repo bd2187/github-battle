@@ -9,8 +9,8 @@ require('./index.css');
 class App extends React.Component {
   render() {
     return (
-      <div> // JSX
-        <h1>Hello World!</h1>
+      <div>
+        <h1>Hello React Training!</h1>
       </div>
     );
   }
@@ -19,5 +19,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.querySelector('#app');
+  document.querySelector('#app')
 );
