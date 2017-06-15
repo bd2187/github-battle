@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 
 function SelectLanguage (props) {
   var languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
+  var {selectedLanguage, onSelect} = props;
   return (
     <div>
       <ul className='languages'>
         {languages.map(function(lang){
           return (
           <li
-            style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
+            style={lang === selectedLanguage ? {color: '#d0021b'} : null}
             key={lang}
-            onClick={props.onSelect.bind(null, lang)}>
+            onClick={onSelect.bind(null, lang)}>
             {lang}
           </li>)
         })}
