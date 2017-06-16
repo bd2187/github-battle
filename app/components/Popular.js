@@ -26,7 +26,6 @@ function SelectLanguage (props) {
 
 function RepoGrid (props) {
   var {repos} = props;
-  console.log(repos);
   return (
     <ul className='popular-list'>
       {repos.map(function (repo, index) {

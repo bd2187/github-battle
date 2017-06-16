@@ -2,10 +2,14 @@
 
 import React from 'react';
 
-function Battle() {
-  return (
-    <h1>Battle</h1>
-  )
+class Battle extends React.Component {
+  render() {
+    return (
+      <div>
+        Render
+      </div>
+    )
+  }
 }
 
 export default Battle;
