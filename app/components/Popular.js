@@ -52,7 +52,6 @@ function RepoGrid (props) {
   )
 }
 
-
 RepoGrid.propTypes = {
   repos: PropTypes.array.isRequired
 }
@@ -104,7 +103,7 @@ class Popular extends React.Component {
           onSelect={this.updateLanguage}
         />
         {!this.state.repos
-          ? <p>Loading</p>
+          ? <p id="loading">Loading</p>
           : <RepoGrid repos={this.state.repos} />}
       </div>
     ); // {JSON.stringify(this.state.repos, null, 2)}
