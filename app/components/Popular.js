@@ -92,7 +92,7 @@ class Popular extends React.Component {
       }.bind(this)) // returns new function with 'this' pointing to Popular
       .catch( function(err){
         console.log(err);
-      } )
+      } );
   }
   render() {
     return (

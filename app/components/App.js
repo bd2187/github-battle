@@ -8,7 +8,8 @@ import Battle from './Battle';
 import Popular from './Popular';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 // state
@@ -21,9 +22,12 @@ class App extends React.Component {
       <Router>
         <div className="container">
           <Nav />
-          <Route exact path="/" component={Home}/>
-          <Route path="/battle" component={Battle}/>
-          <Route path="/popular" component={Popular}/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/battle" component={Battle}/>
+            <Route path="/popular" component={Popular}/>
+            <Route render={() => <h1>Not Found</h1>}/>
+          </Switch>
         </div>
       </Router>
     );

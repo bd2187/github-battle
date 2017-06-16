@@ -24,7 +24,7 @@ function Nav() {
         </NavLink>
       </li>
     </ul>
-  )
+  );
 }
 
 export default Nav;
