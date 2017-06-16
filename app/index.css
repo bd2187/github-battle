@@ -58,3 +58,15 @@ li {
   color: #d0021b;
   font-size: 3em;
 }
+
+.nav {
+  display: flex;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav li {
+  margin-right: 15px;
+}
