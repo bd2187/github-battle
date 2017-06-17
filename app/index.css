@@ -104,3 +104,8 @@ a {
 .button:active {
   transform: translateY(2px);
 }
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
