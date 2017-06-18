@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 function PlayerPreview(props) {
   return (
@@ -111,10 +112,11 @@ class Battle extends React.Component {
       var newState = {};
       newState[`${id}Name`] = '';
       newState[`${id}Image`] = null;
-      return newState
+      return newState;
     });
   }
   render() {
+    var match = this.props.match
     var playerOneName = this.state.playerOneName;
     var playerTwoName = this.state.playerTwoName;
     var playerOneImage = this.state.playerOneImage;
@@ -146,13 +148,23 @@ class Battle extends React.Component {
             />}
 
           {playerTwoImage !== null &&
-            <PlayerPreivew
+            <PlayerPreview
               avatar={playerTwoImage}
               username={playerTwoName}
               onReset={this.handleReset}
               id="playerTwo"
             />}
         </div>
+        {playerOneImage && playerTwoImage
+          ? <Link
+              className="button"
+              to={{
+                pathname: `${match.url}/results`,
+                search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
+              }}>
+              Battle
+            </Link>
+          : null}
       </div>
     );
   }
