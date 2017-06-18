@@ -121,6 +121,7 @@ class Battle extends React.Component {
     var playerTwoName = this.state.playerTwoName;
     var playerOneImage = this.state.playerOneImage;
     var playerTwoImage = this.state.playerTwoImage;
+    console.log(this.props);
 
     return (
       <div>
