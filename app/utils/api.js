@@ -2,18 +2,20 @@
 
 import axios from 'axios';
 
+var id = "YOUR_CLIENT_ID";
+var sec = "YOUR_SECRET_ID";
+var params = "?client_id=" + id + "&client_secret=" + sec;
+var params = `?client_id=${id}&client_secret=${sec}`;
+
 function getProfile(username) {
   return axios.get(`https://api.github.com/users/${username}${params}`)
     .then(function(user){
       return user.data
-    })
-    .catch(function(err){
-      console.log(err);
-    })
+    });
 }
 
 function getRepos(username) {
-  return axios.get(`https://api.github.com/users/${username}/repos${params}&per_page=100`)
+  return axios.get(`https://api.github.com/users/${username}/repos${params}&per_page=100`);
 }
 
 function getStarCount(repos) {
@@ -41,7 +43,6 @@ function getUserData(player) {
   ]).then(function(data){
     var profile = data[0];
     var repos = data[1];
-
     return {
       profile,
       score: calculateScore(profile, repos)
