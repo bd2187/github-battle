@@ -34,7 +34,33 @@ function calculateScore(profile, repos) {
   return (followers * 3) + totalStars;
 }
 
+function getUserData(player) {
+  return axios.all([
+    getProfile(player),
+    getRepos(player)
+  ]).then(function(data){
+    var profile = data[0];
+    var repos = data[1];
+
+    return {
+      profile,
+      score: calculateScore(profile, repos)
+    }
+  })
+}
+
+function sortPlayers(players) {
+  return players.sort(function(a, b){
+    return b.score - a.score;
+  })
+}
+
 export default {
+  battle(players) {
+    return axios.all(players.map(getUserData))
+      .then(sortPlayers)
+      .catch(handleError);
+  },
   fetchPopularRepos(language) {
     var encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language: ${language}&sort=stars&order=desc&type=Repositories`);
 
