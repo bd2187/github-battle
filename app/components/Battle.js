@@ -132,7 +132,8 @@ class Battle extends React.Component {
                   onClick={this.handleReset.bind(null, 'playerTwo')}>
                     Reset
                 </button>
-            </PlayerPreview>}
+          </PlayerPreview>}
+          
         </div>
         {playerOneImage && playerTwoImage
           ? <Link
