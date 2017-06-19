@@ -121,7 +121,6 @@ class Battle extends React.Component {
     var playerTwoName = this.state.playerTwoName;
     var playerOneImage = this.state.playerOneImage;
     var playerTwoImage = this.state.playerTwoImage;
-    console.log(this.props);
 
     return (
       <div>
@@ -162,7 +161,7 @@ class Battle extends React.Component {
               to={{
                 pathname: `${match.url}/results`,
                 search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
-              }}>
+            }}>
               Battle
             </Link>
           : null}
